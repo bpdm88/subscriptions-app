@@ -1,5 +1,5 @@
 const initial = {
-    subscriptions: [{name:"click me"}],
+    subscriptions: [],
     loaded: false,
     selected: null,
 };

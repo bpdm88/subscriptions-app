@@ -1,6 +1,7 @@
 import List from "./List";
 
 import { connect } from "react-redux";
+import { selected } from "../../data/actions/state";
 import { getSubscriptions } from "../../data/actions/api";
 
 const mapStateToProps = (state) => {
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleClick: () => dispatch(getSubscriptions()),
+        setSelected: ( id ) => dispatch(selected( id )),
+        handleLoad: () => dispatch(getSubscriptions()),
     };
 };
 
