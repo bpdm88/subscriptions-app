@@ -1,15 +1,17 @@
 import initialState from "./initial";
 
 // Reducer functions
+const saveSubscription = (state, { data }) => {
+    return {
+        ...state,
+        subscription: data
+    }
+}
 
 // Reducer
 const reducer = (state, action) => {
     switch (action.type) {
-        case "SELECTED_SUBSCRIPTION":
-            return {
-                ...state,
-                id: action.data.subscriptions.id,
-            };
+        case "SELECTED_SUBSCRIPTION": return saveSubscription(state, action);
         default:
             return state;
     }
