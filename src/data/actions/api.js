@@ -1,19 +1,21 @@
 //  import axios from "../../axios-config";
 
-/*
-import { blah } from "./state";
+import { selectedSubscription } from "./state";
 
-export const postGame = ( formState ) => {
-    const { player1Name, player2Name, winningScore, alternateAt } = formState;
-    return ( dispatch ) => {
-        axios.post("/", {
-            "player_1": player1Name,
-            "player_2": player2Name,
-            "winning_score": winningScore,
-            "change_serve": alternateAt
-        }).then(({ data }) => {
-            dispatch(saveSettings({ ...formState, id: data.data.id }));
-        });
-    }
-}
-*/
+export const getSubscription = () => {
+    return (dispatch) => {
+        let apiResponse = {
+            subscriptions: {
+                id: 1,
+                name: "Spotify",
+                cost: 9.99,
+                start: 6386387387673686,
+                payment_date: 17, // day of month
+                notice_period: 14, // days
+                tags: ["Bills", "Music", "Streaming"],
+            },
+        };
+
+        dispatch(selectedSubscription(apiResponse));
+    };
+};
