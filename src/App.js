@@ -1,8 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 
+import List from "./components/List";
+
 const App = () => (
-  <h1>Subscriptions</h1>
+  <List/>
 );
 
 export default App;
