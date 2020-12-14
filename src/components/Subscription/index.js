@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        Subscription: state.selectedSubscription,
+        data: state.subscription,
     };
 };
 
