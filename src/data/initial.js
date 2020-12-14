@@ -1,7 +1,7 @@
 const initial = {
     subscriptions: ["hello", "goodbye"],
     loaded: false,
-    id: 0,
+    subscription: {},
 };
 
 export default initial;
