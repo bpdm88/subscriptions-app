@@ -1,5 +1,5 @@
 const initial = {
-    subscriptions: [],
+    subscriptions: ["hello","goodbye"],
     loaded: false,
 }
 
