@@ -1,9 +1,13 @@
 import './App.css';
 
 import List from "./components/List";
+import Subscription from "./components/Subscription";
 
 const App = () => (
-  <List/>
+  <>
+    <List/>
+    <Subscription />
+  </>
 );
 
 export default App;
