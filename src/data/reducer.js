@@ -4,7 +4,7 @@ import initialState from "./initial";
 const saveSubscription = (state, { data }) => {
     return {
         ...state,
-        subscription: data
+        subscriptions: data
     }
 }
 

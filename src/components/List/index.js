@@ -1,7 +1,7 @@
 import List from "./List";
 
 import { connect } from "react-redux";
-import { getSubscription } from "../../data/actions/api";
+import { getSubscriptions } from "../../data/actions/api";
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleClick: () => dispatch(getSubscription()),
+        handleClick: () => dispatch(getSubscriptions()),
     };
 };
 

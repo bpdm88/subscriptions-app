@@ -1,7 +1,7 @@
 const initial = {
-    subscriptions: ["hello", "goodbye"],
+    subscriptions: [{name:"click me"}],
     loaded: false,
-    subscription: {},
+    selected: null,
 };
 
 export default initial;

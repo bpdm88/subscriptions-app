@@ -1,8 +1,8 @@
 const List = ({ list, handleClick }) => (
     <ul>
-        {list.map((item, index) => (
-            <li key={index} onClick={handleClick}>
-                {item}
+        {list.map( item => (
+            <li key={item.id} onClick={handleClick}>
+                {item.name}
             </li>
         ))}
     </ul>
