@@ -5,7 +5,7 @@ const Subscription = ({ selected }) => {
     let cancelDate = new Date(1608854400);
 
     const convertToDays = (unixTimeStp) => {
-        return ( unixTimeStp / (1000*60*60*24));
+        return unixTimeStp / (1000*60*60*24);
     }
 
     let daysLeft = cancelDate - current;
