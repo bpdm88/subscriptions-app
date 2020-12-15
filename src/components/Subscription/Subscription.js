@@ -1,6 +1,6 @@
 const Subscription = ({ data, selected }) => {
     return (
-        <div>
+        <div className="subscr-card">
             <h1>
                 {selected.length > 0
                     ? selected[0].subscription_name
