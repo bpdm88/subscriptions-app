@@ -1,21 +1,37 @@
 //  import axios from "../../axios-config";
 
-import { selectedSubscription } from "./state";
+import { storeSubscriptions } from "./state";
 
-export const getSubscription = () => {
+export const getSubscriptions = () => {
     return (dispatch) => {
-        let apiResponse = {
-            subscriptions: {
-                id: 1,
+        let apiResponse = [
+            {   id: 1,
                 name: "Spotify",
                 cost: 9.99,
                 start: 6386387387673686,
-                payment_date: 17, // day of month
-                notice_period: 14, // days
+                payment_date: 17,
+                notice_period: 14,
                 tags: ["Bills", "Music", "Streaming"],
             },
-        };
+            {   id: 2,
+                name: "Netflix",
+                cost: 9.99,
+                start: 6386387387673686,
+                payment_date: 17,
+                notice_period: 14,
+                tags: ["Bills", "Music", "Streaming"],
+            },
+            {   id: 3,
+                name: "Amazon",
+                cost: 9.99,
+                start: 6386387387673686,
+                payment_date: 17,
+                notice_period: 14,
+                tags: ["Bills", "Music", "Streaming"],
+            }
+        ]
 
-        dispatch(selectedSubscription(apiResponse));
+
+        dispatch(storeSubscriptions(apiResponse));
     };
 };
