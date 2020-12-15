@@ -1,14 +1,12 @@
+import { convertToDays, dateStingToDateObj } from "../../data/utilities/time";
+
 const Subscription = ({ selected }) => {
 
-    let current = Date.now();
+    let test = dateStingToDateObj("20201225");
+    let current = new Date();
 
-    let cancelDate = new Date(1608854400);
-
-    const convertToDays = (unixTimeStp) => {
-        return unixTimeStp / (1000*60*60*24);
-    }
-
-    let daysLeft = cancelDate - current;
+    let milliseconds = test - current;
+    console.log(convertToDays(milliseconds));
 
 
     return (
@@ -18,7 +16,7 @@ const Subscription = ({ selected }) => {
                 { selected.subscription_name }
             </h1>
             <p>Monthly Cost £{selected.cost}</p>
-            <p>Avoid next payment ? Cancel in { daysLeft } days</p>
+            <p>Avoid next payment ? Cancel in {"BLAH"} days</p>
         </div>
     );
 };
