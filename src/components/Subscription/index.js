@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
     let current = state.subscriptions.filter( item => item.id === state.selected );
 
     return {
-        selected: current,
+        selected: current.length === 0 ? null : current[0],
     };
 };
 

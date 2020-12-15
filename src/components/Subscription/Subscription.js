@@ -1,10 +1,10 @@
-const Subscription = ({ data, selected }) => {
+const Subscription = ({ selected }) => {
+
     return (
+        !selected ? null :
         <div className="subscr-card">
             <h1>
-                {selected.length > 0
-                    ? selected[0].subscription_name
-                    : "loading.."}
+                { selected.subscription_name }
             </h1>
         </div>
     );
