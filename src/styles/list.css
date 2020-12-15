@@ -1,5 +1,12 @@
 .list-item {
-    background-color: #2B303D;
+    background-color: #2b303d;
     color: white;
-    border-radius: 15px;
+    border-radius: 30px;
+    width: 300px;
+    margin: 15px;
+    padding: 10px;
+    font-family: helvetica;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
