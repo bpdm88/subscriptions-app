@@ -32,6 +32,15 @@ export const getSubscriptions = () => {
                 notice_period: 14,
                 tags: ["Bills", "Music", "Streaming"],
             },
+            {
+                id: 4,
+                subscription_name: "Sky Sports",
+                cost: 9.99,
+                start: 6386387387673686,
+                payment_date: "20210130",
+                notice_period: 14,
+                tags: ["Bills", "Music", "Streaming"],
+            },
         ];
 
         dispatch(storeSubscriptions(apiResponse));
