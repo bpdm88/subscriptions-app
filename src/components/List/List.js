@@ -33,7 +33,9 @@ class List extends Component {
 
                         {item.subscription_name}
 
-                        <TrafficLight colourCode={1} />
+                        <TrafficLight
+                            colourCode={whatColour(item.payment_date)}
+                        />
                     </li>
                 ))}
             </ul>
@@ -45,6 +47,7 @@ export default List;
 
 let whatColour = (payment) => {
     let dateString = payment;
+
     let year = dateString.substring(0, 4);
     let month = dateString.substring(4, 6);
     let day = dateString.substring(6, 8);
@@ -57,5 +60,11 @@ let whatColour = (payment) => {
 
     let days = difference / (1000 * 60 * 60 * 24); // turns milliseconds to days
 
-    return days.toFixed(1);
+    let rounded = days.toFixed(1);
+
+    if (rounded <= 5) {
+        return 3;
+    } else if (rounded <= 10) {
+        return 2;
+    } else return 1;
 };
