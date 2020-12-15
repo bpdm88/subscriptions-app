@@ -17,7 +17,7 @@ export const getSubscriptions = () => {
             {
                 id: 2,
                 subscription_name: "Netflix",
-                cost: 9.99,
+                cost: 30.02,
                 start: 6386387387673686,
                 payment_date: 26 / 12 / 2020,
                 notice_period: 14,
@@ -26,7 +26,7 @@ export const getSubscriptions = () => {
             {
                 id: 3,
                 subscription_name: "Amazon",
-                cost: 9.99,
+                cost: 6.89,
                 start: 6386387387673686,
                 payment_date: 21 / 12 / 2020,
                 notice_period: 14,
