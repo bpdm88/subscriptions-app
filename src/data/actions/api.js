@@ -37,7 +37,7 @@ export const getSubscriptions = () => {
                 subscription_name: "Sky Sports",
                 cost: 9.99,
                 start: 6386387387673686,
-                payment_date: "20210130",
+                payment_date: "2021016",
                 notice_period: 14,
                 tags: ["Bills", "Music", "Streaming"],
             },

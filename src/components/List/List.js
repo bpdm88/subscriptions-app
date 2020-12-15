@@ -27,10 +27,6 @@ class List extends Component {
                         onClick={this.handleClick}
                         data-id={item.id}
                     >
-                        {console.log(item.payment_date)}
-                        {console.log(whatColour(item.payment_date))}
-                        {console.log(new Date())}
-
                         {item.subscription_name}
 
                         <TrafficLight
@@ -52,15 +48,15 @@ let whatColour = (payment) => {
     let month = dateString.substring(4, 6);
     let day = dateString.substring(6, 8);
 
-    let date = new Date(year, month - 1, day);
+    let date = new Date(year, month - 1, day); // creates payment date based off string
 
-    let current = new Date();
+    let current = new Date(); // the current date
 
     let difference = date - current; // milliseconds difference
 
     let days = difference / (1000 * 60 * 60 * 24); // turns milliseconds to days
 
-    let rounded = days.toFixed(1);
+    let rounded = days.toFixed(1); // rounded day
 
     if (rounded <= 5) {
         return 3;
