@@ -41,8 +41,6 @@ class List extends Component {
 
 export default List;
 
-<<<<<<< HEAD
-=======
 let whatColour = (payment) => {
     let dateString = payment;
 
@@ -66,4 +64,3 @@ let whatColour = (payment) => {
         return 2;
     } else return 1;
 };
->>>>>>> main
