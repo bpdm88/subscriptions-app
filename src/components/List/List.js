@@ -18,6 +18,7 @@ class List extends Component {
 
     render() {
         const { list } = this.props;
+
         return (
             <ul>
                 {list.map((item) => (
@@ -27,7 +28,10 @@ class List extends Component {
                         data-id={item.id}
                     >
                         {item.subscription_name}
-                        <TrafficLight colourCode={2} />
+
+                        <TrafficLight
+                            colourCode={whatColour(item.payment_date)}
+                        />
                     </li>
                 ))}
             </ul>
@@ -37,3 +41,29 @@ class List extends Component {
 
 export default List;
 
+<<<<<<< HEAD
+=======
+let whatColour = (payment) => {
+    let dateString = payment;
+
+    let year = dateString.substring(0, 4);
+    let month = dateString.substring(4, 6);
+    let day = dateString.substring(6, 8);
+
+    let date = new Date(year, month - 1, day); // creates payment date based off string
+
+    let current = new Date(); // the current date
+
+    let difference = date - current; // milliseconds difference
+
+    let days = difference / (1000 * 60 * 60 * 24); // turns milliseconds to days
+
+    let rounded = days.toFixed(1); // rounded day
+
+    if (rounded <= 5) {
+        return 3;
+    } else if (rounded <= 10) {
+        return 2;
+    } else return 1;
+};
+>>>>>>> main
