@@ -73,7 +73,7 @@ class Form extends React.Component {
             categories,
         } = this.state;
 
-        return (
+        return !this.props.form ? null : (
             <form onSubmit={this.handleSubmit}>
                 <FormField
                     label="Name"

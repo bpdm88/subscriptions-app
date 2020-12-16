@@ -8,4 +8,10 @@ let mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(Form);
+let mapStateToProps = (state) => {
+    return {
+        form: state.form,
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
