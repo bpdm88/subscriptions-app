@@ -10,8 +10,9 @@ class Button extends Component {
 
     handleDelete(event) {
         event.preventDefault();
-
-        this.props.deleteItem(this.props.itemID);
+        if(window.confirm("Do you want to delete this subscription?")){
+            this.props.deleteItem(this.props.itemID);
+        };
     }
 
     render() {
