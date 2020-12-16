@@ -1,26 +1,25 @@
+
+/* nav-bar */
 header {
-    background-color: rgba(43, 48, 61, 1);
-    padding: 1rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2B303D;
 }
 
-.logo {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    background-color: white;
+header li {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: #F2F2F2;
+    margin-right: 3rem;
+    margin-top: 1rem;
 }
-
-h1 {
-    font-family: "Coiny", cursive;
-    font-size: 12px;
-    text-align: center;
-    margin: 0;
-}
-
-body {
-    background-color: #e5e5e5;
-}
-
-.logo-large {
-    font-size: 24px;
+.logo-svg {
+    margin-left: 1rem;
+    width: 5rem;
+    height: 5rem;
 }
