@@ -1,22 +1,21 @@
-import { convertToDays, dateStringToDateObj, cancelDate } from "../../data/utilities/time";
+import { daysToCancel } from "../../data/utilities/time";
+import { amountPaid } from "../../data/utilities/finances";
 
-const Subscription = ({ selected }) => {
-
+const Subscription = ({ selected, listID }) => {
+    let display = selected && selected.id === listID;
     return (
-        !selected ? null :
-        <div className="list-item">
-            <h1>
-                { selected.subscription_name }
-            </h1>
+        !display ? null :
+        <>
             <p>Monthly Cost £{selected.cost}</p>
             <p>
                 Avoid next payment ? Cancel in 
                 {
-                    convertToDays(cancelDate(selected.notice_period, selected.payment_date) - Date.now())
+                    daysToCancel(selected.notice_period, selected.payment_date)
                 } 
                 days
             </p>
-        </div>
+            <p>Spent so far £{amountPaid(selected.start, +selected.cost)}</p>
+        </>
     );
 };
 

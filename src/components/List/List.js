@@ -1,5 +1,7 @@
 import { Component } from "react";
 import TrafficLight from "./TrafficLight/TrafficLight";
+import Subscription from "../Subscription";
+import { paymentDayToDateObj } from "../../data/utilities/time";
 
 class List extends Component {
     constructor() {
@@ -17,17 +19,13 @@ class List extends Component {
         this.props.setSelected(event.currentTarget.dataset.id);
     }
 
-    whatColour(payment) {
-        let dateString = payment;
-        let year = dateString.substring(0, 4);
-        let month = dateString.substring(4, 6);
-        let day = dateString.substring(6, 8);
+    whatColour(paymentDay) {
 
-        let date = new Date(year, month - 1, day); // creates payment date based off string
+        let paymentDate = paymentDayToDateObj(paymentDay);
 
         let current = new Date(); // the current date
 
-        let difference = date - current; // milliseconds difference
+        let difference = paymentDate - current; // milliseconds difference
 
         let days = difference / (1000 * 60 * 60 * 24); // turns milliseconds to days
 
@@ -57,6 +55,7 @@ class List extends Component {
                         <TrafficLight
                             colourCode={this.whatColour(item.payment_date)}
                         />
+                        <Subscription listID={ item.id }/>
                     </li>
                 ))}
             </ul>

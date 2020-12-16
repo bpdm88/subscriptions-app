@@ -12,10 +12,56 @@ export const dateStringToDateObj = (dateString) => {
     return dateObj;
 }
 
-export const cancelDate = ( noticePeriod, paymentDate ) => {
-    let miliseconds = noticePeriod*1000*60*60*24;
-    let effectiveEnd = dateStringToDateObj(paymentDate) - miliseconds;
+export const paymentDayToDateObj= (int) => {
+    let current = new Date();
+    let today = current.getDate();
 
-    return effectiveEnd;
+    if ( int > today ) {
+        return current.setDate(int);
+    } else {
+        current.setDate(int)
+        current.setMonth(current.getMonth() + 1);
+        return current;
+    }
 }
 
+export const cancelDate = ( noticePeriod, paymentDate ) => {
+    let noticeMili = noticePeriod*1000*60*60*24;
+    let now = new Date();
+
+    let cancelDateObj = new Date(paymentDate - noticeMili);
+
+    if ( cancelDateObj - now >= 0 ){
+        return cancelDateObj;
+    } else {
+        cancelDateObj.setMonth(cancelDateObj.getMonth() + 1);
+        return cancelDateObj;
+    }
+}
+
+export const daysToCancel = (noticePeriod, paymentDate) => {
+
+    let paymentDay = paymentDayToDateObj(paymentDate);
+
+    let cancelOn = cancelDate(noticePeriod, paymentDay);
+
+    let current = new Date();
+
+    let days = convertToDays(cancelOn - current);
+    
+    return days;
+
+}
+
+export const monthDiff = ( startDateObj, endDateObj ) => {
+    
+    let yearsAsMonths = (endDateObj.getFullYear() - startDateObj.getFullYear()) * 12;
+
+    let monthsInCurrentYear = endDateObj.getMonth() - startDateObj.getMonth();
+
+    let elapsed = yearsAsMonths + monthsInCurrentYear;
+
+
+    return elapsed;
+
+}
