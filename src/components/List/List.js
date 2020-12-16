@@ -1,5 +1,6 @@
 import { Component } from "react";
 import TrafficLight from "./TrafficLight/TrafficLight";
+import Subscription from "../Subscription";
 import { paymentDayToDateObj } from "../../data/utilities/time";
 
 class List extends Component {
@@ -54,6 +55,7 @@ class List extends Component {
                         <TrafficLight
                             colourCode={this.whatColour(item.payment_date)}
                         />
+                        <Subscription listID={ item.id }/>
                     </li>
                 ))}
             </ul>

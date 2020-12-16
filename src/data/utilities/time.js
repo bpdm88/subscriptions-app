@@ -31,8 +31,6 @@ export const cancelDate = ( noticePeriod, paymentDate ) => {
 
     let cancelDateObj = new Date(paymentDate - noticeMili);
 
-    console.log(cancelDateObj);
-
     if ( cancelDateObj - now >= 0 ){
         return cancelDateObj;
     } else {
@@ -55,3 +53,15 @@ export const daysToCancel = (noticePeriod, paymentDate) => {
 
 }
 
+export const monthDiff = ( startDateObj, endDateObj ) => {
+    
+    let yearsAsMonths = (endDateObj.getFullYear() - startDateObj.getFullYear()) * 12;
+
+    let monthsInCurrentYear = endDateObj.getMonth() - startDateObj.getMonth();
+
+    let elapsed = yearsAsMonths + monthsInCurrentYear;
+
+
+    return elapsed;
+
+}
