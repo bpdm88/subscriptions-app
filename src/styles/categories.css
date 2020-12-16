@@ -1,0 +1,15 @@
+ul.categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0px;
+}
+
+li.category {
+    list-style: none;
+    background-color: #e5e5e5;
+    color: #2b303d;
+    padding: 0.3rem;
+    margin: 0.3rem;
+    border-radius: 0.6rem;    
+}
