@@ -29,7 +29,9 @@ export const cancelDate = ( noticePeriod, paymentDate ) => {
     let noticeMili = noticePeriod*1000*60*60*24;
     let now = new Date();
 
-    let cancelDateObj = paymentDate - noticeMili;
+    let cancelDateObj = new Date(paymentDate - noticeMili);
+
+    console.log(cancelDateObj);
 
     if ( cancelDateObj - now >= 0 ){
         return cancelDateObj;
