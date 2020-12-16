@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import Form from "./Form";
+import { postSubscription } from "../../data/actions/api";
 
-let mapDispatchtoProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {
     return {
         handleAddSubscription: (data) => dispatch(postSubscription(data)),
     };

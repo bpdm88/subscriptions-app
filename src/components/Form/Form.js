@@ -7,8 +7,8 @@ class Form extends React.Component {
 
         this.state = {
             name: "",
-            cost: null,
-            startDate: null,
+            cost: 0,
+            startDate: 0,
             paymentDate: 0,
             notice: 0,
         };
@@ -51,7 +51,7 @@ class Form extends React.Component {
         let { name, cost, startDate, paymentDate, notice } = this.state;
 
         return (
-            <form onSubmit={}>
+            <form onSubmit={this.handleSubmit}>
                 <FormField
                     label="Name"
                     name="Name"
@@ -92,3 +92,5 @@ class Form extends React.Component {
         );
     }
 }
+
+export default Form;

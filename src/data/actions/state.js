@@ -3,13 +3,16 @@ export const reset = () => ({
 });
 
 export const storeSubscriptions = (data) => ({
-    type: "STORE_SUBSCRIPTION",
+    type: "STORE_SUBSCRIPTIONS",
     data: data,
 });
 
-export const selected = ( id ) => (
-    {
-        type: "SET_SELECTED",
-        selected: id,
-    }
-);
+export const selected = (id) => ({
+    type: "SET_SELECTED",
+    selected: id,
+});
+
+export const storeSubscription = (data) => ({
+    type: "SAVE_SUBSCRIPTION",
+    data: data,
+});
