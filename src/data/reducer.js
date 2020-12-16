@@ -4,22 +4,33 @@ import initialState from "./initial";
 const saveSubscriptions = (state, { data }) => {
     return {
         ...state,
-        subscriptions: data
-    }
-}
+        subscriptions: data,
+    };
+};
 
-const setSelected = ( state, { selected } ) => {
+const setSelected = (state, { selected }) => {
     return {
         ...state,
         selected: +selected,
-    }
-}
+    };
+};
+
+const saveSubscription = (state, { data }) => {
+    return {
+        ...state,
+        subscriptions: [...state.subscriptions, data],
+    };
+};
 
 // Reducer
 const reducer = (state, action) => {
     switch (action.type) {
-        case "STORE_SUBSCRIPTION": return saveSubscriptions(state, action);
-        case "SET_SELECTED": return setSelected( state, action );
+        case "STORE_SUBSCRIPTIONS":
+            return saveSubscriptions(state, action);
+        case "SET_SELECTED":
+            return setSelected(state, action);
+        case "SAVE_SUBSCRIPTION":
+            return saveSubscription(state, action);
 
         default:
             return state;
