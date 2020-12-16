@@ -16,3 +16,8 @@ export const storeSubscription = (data) => ({
     type: "SAVE_SUBSCRIPTION",
     data: data,
 });
+
+export const deleteSubscription = ( id ) => ({
+    type: "DELETE",
+    id: id,
+});

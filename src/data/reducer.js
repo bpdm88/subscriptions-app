@@ -1,3 +1,4 @@
+import { deleteSubscription } from "./actions/state";
 import initialState from "./initial";
 
 // Reducer functions
@@ -22,6 +23,16 @@ const saveSubscription = (state, { data }) => {
     };
 };
 
+const deleteFromState = ( state, { id } ) => {
+    let subscriptions = state.subscriptions;
+
+    let updated = subscriptions.filter( item => item.id !== id )
+    return {
+        ...state,
+        subscriptions: [ ...updated ],
+    }
+}
+
 // Reducer
 const reducer = (state, action) => {
     switch (action.type) {
@@ -31,7 +42,8 @@ const reducer = (state, action) => {
             return setSelected(state, action);
         case "SAVE_SUBSCRIPTION":
             return saveSubscription(state, action);
-
+        case "DELETE":
+            return deleteFromState(state, action);
         default:
             return state;
     }
