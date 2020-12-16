@@ -1,20 +1,20 @@
 .traffic-light--green {
-    width: 40px;
-    height: 40px;
-    background-color: green;
+    width: 20px;
+    height: 20px;
+    background-color: #00cea2;
     border-radius: 50%;
 }
 
 .traffic-light--yellow {
-    width: 40px;
-    height: 40px;
-    background-color: yellow;
+    width: 20px;
+    height: 20px;
+    background-color: #ffcb23;
     border-radius: 50%;
 }
 
 .traffic-light--red {
-    width: 40px;
-    height: 40px;
-    background-color: red;
+    width: 20px;
+    height: 20px;
+    background-color: #fd3620;
     border-radius: 50%;
 }

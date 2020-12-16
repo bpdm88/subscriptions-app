@@ -50,6 +50,7 @@ class List extends Component {
                         key={item.id}
                         onClick={this.handleClick}
                         data-id={item.id}
+                        className="list-item"
                     >
                         {item.subscription_name}
 
