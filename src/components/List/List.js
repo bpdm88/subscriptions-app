@@ -49,12 +49,14 @@ class List extends Component {
                         onClick={this.handleClick}
                         data-id={item.id}
                         className="list-item"
-                    >
-                        {item.subscription_name}
+                    >   
+                        <div className="list-item_header">
+                            <p>{item.subscription_name}</p>
 
-                        <TrafficLight
-                            colourCode={this.whatColour(item.payment_date)}
-                        />
+                            <TrafficLight
+                                colourCode={this.whatColour(item.payment_date)}
+                            />
+                        </div>
                         <Subscription listID={ item.id }/>
                     </li>
                 ))}

@@ -1,5 +1,31 @@
-.subscr-card {
-    background-color: #2B303D;
-    color: white;
-    border-radius: 15px;
+.delete {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background: #7b7e82;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.delete:hover,
+.delete:focus {
+    background: #0053ba;
+}
+
+.delete:focus {
+    color: black;
+}
+
+.delete:active {
+    transform: scale(1.2);
 }
