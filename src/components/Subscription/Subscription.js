@@ -1,6 +1,7 @@
 import { daysToCancel } from "../../data/utilities/time";
 import { amountPaid } from "../../data/utilities/finances";
 import Button from "../Button";
+import Categories from "../Categories";
 
 const Subscription = ({ selected, listID }) => {
     let display = selected && selected.id === listID;
@@ -14,6 +15,7 @@ const Subscription = ({ selected, listID }) => {
             <p>
                 Cancel in { daysToCancel(selected.notice_period, selected.payment_date) } days
             </p>
+            <Categories selected={ selected }/>
             <Button className="delete" itemID={ listID }></Button>
         </>
     );
