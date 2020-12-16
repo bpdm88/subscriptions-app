@@ -1,7 +1,31 @@
-.delete {
+button {
     width: 20px;
     height: 20px;
-    background-color: white;
     border-radius: 50%;
     display: block;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background: #7b7e82;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #0053ba;
+}
+
+button:focus {
+    color: black;
+}
+
+button:active {
+    transform: scale(1.2);
 }
