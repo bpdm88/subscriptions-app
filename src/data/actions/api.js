@@ -12,7 +12,7 @@ export const getSubscriptions = () => {
                 start: "20200401",
                 payment_date: 17,
                 notice_period: 14,
-                tags: ["Bills", "Music", "Streaming"],
+                categories: ["Bills", "Music", "Streaming"],
             },
             {
                 id: 2,
@@ -21,7 +21,7 @@ export const getSubscriptions = () => {
                 start: "20200401",
                 payment_date: 15,
                 notice_period: 14,
-                tags: ["Bills", "Music", "Streaming"],
+                categories: ["Bills", "Music", "Streaming"],
             },
             {
                 id: 3,
@@ -30,7 +30,7 @@ export const getSubscriptions = () => {
                 start: "20200401",
                 payment_date: 1,
                 notice_period: 14,
-                tags: ["Bills", "Music", "Streaming"],
+                categories: ["Bills", "Music", "Streaming"],
             },
             {
                 id: 4,
@@ -39,7 +39,7 @@ export const getSubscriptions = () => {
                 start: "20200401",
                 payment_date: 3,
                 notice_period: 14,
-                tags: ["Bills", "Music", "Streaming"],
+                categories: ["Bills", "Music", "Streaming"],
             },
         ];
 
@@ -56,7 +56,7 @@ export const postSubscription = (sub) => {
             start: sub.startDate,
             payment_date: sub.paymentDate,
             notice_period: +sub.notice,
-            tags: ["Bills", "Music", "Streaming"],
+            categories: ["Bills", "Music", "Streaming"],
         };
 
         dispatch(storeSubscription(apiResponse));
