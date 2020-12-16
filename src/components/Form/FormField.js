@@ -3,6 +3,7 @@ const FormField = ({ label, name, type, handleChange, value, min, max }) => {
         <div>
             <label htmlFor={name}>{label}</label>
             <input
+                className="input"
                 id={name}
                 type={type}
                 onChange={handleChange}

@@ -11,6 +11,7 @@ class Form extends React.Component {
             startDate: "",
             paymentDate: "",
             notice: 0,
+            categories: "",
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +20,7 @@ class Form extends React.Component {
         this.handleChangeStart = this.handleChangeStart.bind(this);
         this.handleChangePayment = this.handleChangePayment.bind(this);
         this.handleChangeNotice = this.handleChangeNotice.bind(this);
+        this.handleChangeCategories = this.handleChangeCategories.bind(this);
     }
 
     handleSubmit(event) {
@@ -57,10 +59,21 @@ class Form extends React.Component {
         this.setState({ notice: event.currentTarget.value });
     }
 
-    render() {
-        let { name, cost, startDate, paymentDate, notice } = this.state;
+    handleChangeCategories(event) {
+        this.setState({ categories: event.currentTarget.value });
+    }
 
-        return (
+    render() {
+        let {
+            name,
+            cost,
+            startDate,
+            paymentDate,
+            notice,
+            categories,
+        } = this.state;
+
+        return !this.props.form ? null : (
             <form onSubmit={this.handleSubmit}>
                 <FormField
                     label="Name"
@@ -98,6 +111,13 @@ class Form extends React.Component {
                     type="number"
                     handleChange={this.handleChangeNotice}
                     value={notice}
+                />
+                <FormField
+                    label="Categories"
+                    name="Categories"
+                    type="text"
+                    handleChange={this.handleChangeCategories}
+                    value={categories}
                 />
                 <button>Add Subscription</button>
             </form>

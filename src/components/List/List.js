@@ -2,6 +2,7 @@ import { Component } from "react";
 import TrafficLight from "./TrafficLight/TrafficLight";
 import Subscription from "../Subscription";
 import { paymentDayToDateObj } from "../../data/utilities/time";
+import Form from "../Form/Form";
 
 class List extends Component {
     constructor() {
@@ -20,7 +21,6 @@ class List extends Component {
     }
 
     whatColour(paymentDay) {
-
         let paymentDate = paymentDayToDateObj(paymentDay);
 
         let current = new Date(); // the current date
@@ -49,7 +49,7 @@ class List extends Component {
                         onClick={this.handleClick}
                         data-id={item.id}
                         className="list-item"
-                    >   
+                    >
                         <div className="list-item_header">
                             <p>{item.subscription_name}</p>
 
@@ -57,9 +57,13 @@ class List extends Component {
                                 colourCode={this.whatColour(item.payment_date)}
                             />
                         </div>
-                        <Subscription listID={ item.id }/>
+                        <Subscription listID={item.id} />
                     </li>
                 ))}
+                <li className="list-item">
+                    Add Subscription<button class="add">+</button>
+                    <Form />
+                </li>
             </ul>
         );
     }
