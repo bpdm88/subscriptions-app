@@ -1,15 +1,6 @@
+import { convertToDays, dateStringToDateObj, cancelDate } from "../../data/utilities/time";
+
 const Subscription = ({ selected }) => {
-
-    let current = Date.now();
-
-    let cancelDate = new Date(1608854400);
-
-    const convertToDays = (unixTimeStp) => {
-        return ( unixTimeStp / (1000*60*60*24));
-    }
-
-    let daysLeft = cancelDate - current;
-
 
     return (
         !selected ? null :
@@ -18,7 +9,13 @@ const Subscription = ({ selected }) => {
                 { selected.subscription_name }
             </h1>
             <p>Monthly Cost £{selected.cost}</p>
-            <p>Avoid next payment ? Cancel in { daysLeft } days</p>
+            <p>
+                Avoid next payment ? Cancel in 
+                {
+                    convertToDays(cancelDate(selected.notice_period, selected.payment_date) - Date.now())
+                } 
+                days
+            </p>
         </div>
     );
 };
