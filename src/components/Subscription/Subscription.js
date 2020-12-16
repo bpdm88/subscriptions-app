@@ -1,4 +1,5 @@
 import { daysToCancel } from "../../data/utilities/time";
+import { amountPaid } from "../../data/utilities/finances";
 
 const Subscription = ({ selected }) => {
 
@@ -16,6 +17,7 @@ const Subscription = ({ selected }) => {
                 } 
                 days
             </p>
+            <p>Spent so far £{amountPaid(selected.start, +selected.cost)}</p>
         </div>
     );
 };
