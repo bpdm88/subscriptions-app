@@ -38,7 +38,8 @@ button {
 }
 
 button:hover {
-    color: #2b303d;
-    background-color: white;
-    border-color: #2b303d;
+    transition: all 0.4s ease 0.1s;
+    color: white;
+    background-color: #2b303d;
+    border-color: white;
 }
