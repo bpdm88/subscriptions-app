@@ -1,4 +1,4 @@
-button {
+.delete {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -17,15 +17,15 @@ button {
     -moz-appearance: none;
 }
 
-button:hover,
-button:focus {
+.delete:hover,
+.delete:focus {
     background: #0053ba;
 }
 
-button:focus {
+.delete:focus {
     color: black;
 }
 
-button:active {
+.delete:active {
     transform: scale(1.2);
 }
