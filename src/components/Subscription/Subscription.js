@@ -15,6 +15,7 @@ const Subscription = ({ selected, listID }) => {
                 days
             </p>
             <p>Spent so far £{amountPaid(selected.start, +selected.cost)}</p>
+            <button className="delete">x</button>
         </>
     );
 };

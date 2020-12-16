@@ -1,5 +1,7 @@
-.subscr-card {
-    background-color: #2B303D;
-    color: white;
-    border-radius: 15px;
+.delete {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
 }
