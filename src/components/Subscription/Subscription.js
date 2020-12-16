@@ -1,4 +1,4 @@
-import { convertToDays, dateStringToDateObj, cancelDate } from "../../data/utilities/time";
+import { daysToCancel } from "../../data/utilities/time";
 
 const Subscription = ({ selected }) => {
 
@@ -12,7 +12,7 @@ const Subscription = ({ selected }) => {
             <p>
                 Avoid next payment ? Cancel in 
                 {
-                    convertToDays(cancelDate(selected.notice_period, selected.payment_date) - Date.now())
+                    daysToCancel(selected.notice_period, selected.payment_date)
                 } 
                 days
             </p>
