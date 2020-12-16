@@ -8,8 +8,8 @@ class Form extends React.Component {
         this.state = {
             name: "",
             cost: 0,
-            startDate: 0,
-            paymentDate: 0,
+            startDate: "",
+            paymentDate: "",
             notice: 0,
         };
 
@@ -40,7 +40,17 @@ class Form extends React.Component {
     }
 
     handleChangePayment(event) {
-        this.setState({ paymentDate: event.currentTarget.value });
+        let date;
+
+        if (event.currentTarget.value > 31) {
+            date = 31;
+        } else if (event.currentTarget.value < 1) {
+            date = 1;
+        } else {
+            date = event.currentTarget.value;
+        }
+
+        this.setState({ paymentDate: date });
     }
 
     handleChangeNotice(event) {
@@ -69,7 +79,7 @@ class Form extends React.Component {
                 <FormField
                     label="Start Date"
                     name="Start Date"
-                    type="number"
+                    type="date"
                     handleChange={this.handleChangeStart}
                     value={startDate}
                 />
@@ -77,6 +87,8 @@ class Form extends React.Component {
                     label="Payment Date"
                     name="Payment Date"
                     type="number"
+                    min="1"
+                    max="31"
                     handleChange={this.handleChangePayment}
                     value={paymentDate}
                 />

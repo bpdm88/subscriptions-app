@@ -1,7 +1,6 @@
 //  import axios from "../../axios-config";
 
-import { storeSubscriptions } from "./state";
-import { storeSubscription } from "./state";
+import { storeSubscriptions, storeSubscription } from "./state";
 
 export const getSubscriptions = () => {
     return (dispatch) => {
@@ -48,14 +47,16 @@ export const getSubscriptions = () => {
     };
 };
 
-export const postSubscription = (state) => {
+export const postSubscription = (sub) => {
     return (dispatch) => {
         let apiResponse = {
-            subscription_name: "Spotify",
-            cost: 9.99,
-            start: 20201015,
-            payment_date: 20201217,
-            notice_period: 14,
+            id: 5,
+            subscription_name: sub.name,
+            cost: +sub.cost,
+            start: sub.startDate,
+            payment_date: sub.paymentDate,
+            notice_period: +sub.notice,
+            tags: ["Bills", "Music", "Streaming"],
         };
 
         dispatch(storeSubscription(apiResponse));

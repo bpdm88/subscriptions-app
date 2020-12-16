@@ -18,6 +18,7 @@ const setSelected = (state, { selected }) => {
 const saveSubscription = (state, { data }) => {
     return {
         ...state,
+        subscriptions: [...state.subscriptions, data],
     };
 };
 

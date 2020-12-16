@@ -1,4 +1,4 @@
-const FormField = ({ label, name, type, handleChange, value }) => {
+const FormField = ({ label, name, type, handleChange, value, min, max }) => {
     return (
         <div>
             <label htmlFor={name}>{label}</label>
@@ -7,6 +7,8 @@ const FormField = ({ label, name, type, handleChange, value }) => {
                 type={type}
                 onChange={handleChange}
                 value={value}
+                min={min}
+                max={max}
             />
         </div>
     );
