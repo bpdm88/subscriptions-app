@@ -56,7 +56,6 @@ export const daysToCancel = (noticePeriod, paymentDate) => {
 export const monthDiff = ( startDateObj, endDateObj ) => {
     
     let yearsAsMonths = (endDateObj.getFullYear() - startDateObj.getFullYear()) * 12;
-    console.log(yearsAsMonths);
 
     let monthsInCurrentYear = endDateObj.getMonth() - startDateObj.getMonth();
 
