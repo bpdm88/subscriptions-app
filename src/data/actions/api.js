@@ -1,6 +1,6 @@
 //  import axios from "../../axios-config";
 
-import { storeSubscriptions, storeSubscription } from "./state";
+import { storeSubscriptions, storeSubscription, deleteSubscription } from "./state";
 
 export const getSubscriptions = () => {
     return (dispatch) => {
@@ -62,3 +62,9 @@ export const postSubscription = (sub) => {
         dispatch(storeSubscription(apiResponse));
     };
 };
+
+export const apiDelete = ( id ) => {
+    return (dispatch) => {
+        dispatch(deleteSubscription( id ))
+    }
+}
