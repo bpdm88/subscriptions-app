@@ -10,6 +10,7 @@ class DropDown extends Component {
     handleClick(event) {
         event.preventDefault();
         console.log(event.currentTarget.innerText);
+        console.log(this.props.categories);
     }
 
     render() {
