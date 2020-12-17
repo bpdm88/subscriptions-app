@@ -9,6 +9,9 @@ form {
     align-items: center;
     box-sizing: border-box;
 }
+.add-sub-text{
+    margin: auto;
+}
 
 form label {
     display: block;
