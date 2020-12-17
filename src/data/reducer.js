@@ -34,9 +34,15 @@ const deleteFromState = ( state, { id } ) => {
 }
 
 const addCatFilter = ( state, { category } ) => {
-    return {
-        ...state,
-        categoryFilter: [...state.categoryFilter, category],
+    if(state.categoryFilter.includes(category)) {
+        return {
+            ...state,
+        }
+    } else {
+        return {
+            ...state,
+            categoryFilter: [...state.categoryFilter, category],
+        }
     }
 }
 
