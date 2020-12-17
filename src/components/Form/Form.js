@@ -24,11 +24,27 @@ class Form extends React.Component {
     }
 
     handleSubmit(event) {
+        let {
+            name,
+            cost,
+            startDate,
+            paymentDate,
+            notice,
+            categories,
+        } = this.state;
+
         event.preventDefault();
 
         this.props.handleAddSubscription({ ...this.state });
 
-        // this.setState
+        this.setState({
+            name: "",
+            cost: 0,
+            startDate: "",
+            paymentDate: 0,
+            notice: 0,
+            categories: [],
+        });
     }
 
     handleChangeName(event) {
