@@ -1,11 +1,11 @@
 form {
     background-color: #2b303d;
-    color: white;
+    color: #F2F2F2;
     border-radius: 15px;
     width: 300px;
     margin: 15px;
     padding: 15px;
-    font-family: helvetica;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,18 +30,20 @@ button {
     margin-top: 10px;
     width: 140px;
     height: 40px;
-    border-color: white;
-    background-color: white;
+    background-color: #2b303d;
+    color: #F2F2F2;
+    border-color: #F2F2F2;
+    
     border-style: solid;
     border-radius: 10px;
-    font-family: helvetica;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 14px;
 }
 
 button:hover {
+    background-color: #F2F2F2;
+    color: #2b303d;
     transition: all 0.4s ease 0.1s;
-    color: white;
-    background-color: #2b303d;
-    border-color: white;
+    cursor: pointer;
 }
