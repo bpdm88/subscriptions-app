@@ -1,0 +1,14 @@
+ul.categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0px;
+}
+
+li.category {
+    list-style: none;
+    color: #CAC3C3;
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    margin: 0.3rem;    
+}
