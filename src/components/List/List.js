@@ -42,7 +42,7 @@ class List extends Component {
         const { list } = this.props;
 
         return (
-            <ul>
+            <ul className="sub-card">
                 {list.map((item) => (
                     <li
                         key={item.id}
