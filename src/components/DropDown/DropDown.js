@@ -18,9 +18,10 @@ class DropDown extends Component {
             <div class="dropdown">
                 <button class="dropbtn">Catagories</button>
                 <div class="dropdown-content">
-                    <button onClick={ this.handleClick }>Link 1</button>
-                    <button onClick={ this.handleClick }>Link 2</button>
-                    <button onClick={ this.handleClick }>Link 3</button>
+                    <button onClick={ this.handleClick }>All</button>
+                    {this.props.categories.map(category => (
+                        <button key={ category } onClick={ this.handleClick }>{ category }</button>
+                    ))}
                 </div>
             </div>
         );

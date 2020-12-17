@@ -2,7 +2,7 @@ import "./styles/index.css";
 import List from "./components/List";
 import Header from "./components/Header";
 import Form from "./components/Form";
-import DropDown from "./components/DropDown/DropDown";
+import DropDown from "./components/DropDown";
 
 const App = () => (
     <>

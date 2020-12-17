@@ -8,7 +8,6 @@ export const getSubscriptions = () => {
             let subscriptions = data.data;
             dispatch(storeSubscriptions(subscriptions));
         });
-        
     };
 };
 
