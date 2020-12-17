@@ -2,8 +2,6 @@ form {
     background-color: #2b303d;
     color: #F2F2F2;
     border-radius: 15px;
-    width: 20rem;
-    margin: auto;
     padding: 1.5rem;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
@@ -38,7 +36,6 @@ button {
     background-color: #2b303d;
     color: #F2F2F2;
     border-color: #F2F2F2;
-    
     border-style: solid;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
