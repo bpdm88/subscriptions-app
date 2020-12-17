@@ -10,6 +10,7 @@ class List extends Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.whatColour = this.whatColour.bind(this);
+        this.catListInFilterList = this.catListInFilterList.bind(this);
     }
 
     componentDidMount() {
@@ -38,12 +39,30 @@ class List extends Component {
         } else return 1;
     }
 
+    catListInFilterList = ( catList, filterList ) => {
+        let bool = catList.reduce(( bool, category ) => {
+            if( filterList.includes(category) ) {
+                return true;
+            } else {
+                return bool;
+            }
+        }, false );
+        return bool;
+    }
+
     render() {
-        const { list } = this.props;
+        const { list, categoryFilter } = this.props;
+        let filteredList = [];
+
+        if(categoryFilter.length === 0){
+            filteredList = list;
+        } else {
+            filteredList = list.filter( subscr => this.catListInFilterList( subscr.categories, categoryFilter));
+        }
 
         return (
             <ul>
-                {list.map((item) => (
+                {filteredList.map((item) => (
                     <li
                         key={item.id}
                         onClick={this.handleClick}
