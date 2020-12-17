@@ -9,15 +9,23 @@ header {
 }
 
 header li {
+    list-style: none;
+}
+header li a {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
-    list-style: none;
+    text-decoration: none;
     display: flex;
     align-items: center;
     color: #F2F2F2;
     margin-right: 3rem;
     margin-top: 1rem;
 }
+header a:hover{
+    border-bottom: solid 0.1rem #F2F2F2;
+    
+}
+
 .logo-svg {
     margin-left: 1rem;
     width: 5rem;
