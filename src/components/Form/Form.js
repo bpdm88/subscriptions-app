@@ -119,7 +119,7 @@ class Form extends React.Component {
                     handleChange={this.handleChangeCategories}
                     value={categories}
                 />
-                <button>Add Subscription</button>
+                <button className="form-button">Add Subscription</button>
             </form>
         );
     }
