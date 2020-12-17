@@ -40,6 +40,13 @@ const addCatFilter = ( state, { category } ) => {
     }
 }
 
+const clrCatFilter = ( state ) => {
+    return {
+        ...state,
+        categoryFilter: [],
+    }
+}
+
 // Reducer
 const reducer = (state, action) => {
     switch (action.type) {
@@ -53,6 +60,8 @@ const reducer = (state, action) => {
             return deleteFromState(state, action);
         case "ADD_CAT_FILTER":
             return addCatFilter(state, action);
+        case "CLEAR_CAT_FILTER":
+            return clrCatFilter(state);
         default:
             return state;
     }
