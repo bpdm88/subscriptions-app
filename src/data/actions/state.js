@@ -21,3 +21,8 @@ export const deleteSubscription = ( id ) => ({
     type: "DELETE",
     id: id,
 });
+
+export const categoryFilter = (category) => ({
+    type: "ADD_CAT_FILTER",
+    category: category,
+})

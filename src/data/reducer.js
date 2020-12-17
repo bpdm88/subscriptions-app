@@ -33,6 +33,13 @@ const deleteFromState = ( state, { id } ) => {
     }
 }
 
+const addCatFilter = ( state, { category } ) => {
+    return {
+        ...state,
+        categoryFilter: [...state.categoryFilter, category],
+    }
+}
+
 // Reducer
 const reducer = (state, action) => {
     switch (action.type) {
@@ -44,6 +51,8 @@ const reducer = (state, action) => {
             return saveSubscription(state, action);
         case "DELETE":
             return deleteFromState(state, action);
+        case "ADD_CAT_FILTER":
+            return addCatFilter(state, action);
         default:
             return state;
     }
