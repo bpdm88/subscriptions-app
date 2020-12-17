@@ -6,8 +6,8 @@ import DropDown from "./components/DropDown";
 const App = () => (
     <>
         <Header />
-        <List />
         <DropDown />
+        <List />
     </>
 );
 
