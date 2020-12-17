@@ -6,7 +6,7 @@ const Header = () => (
         <img className="logo-svg" src={ logoIcon } alt="My Subscriptions Logo"/>
         </div>
         <ul>
-            <li>API Documents</li>
+            <li><a href="https://github.com/ammersive/subscription-tracker-bk/blob/main/README.md">API Documents</a></li>
         </ul>
     </header>
 );
