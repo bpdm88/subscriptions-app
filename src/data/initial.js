@@ -4,6 +4,7 @@ const initial = {
     selected: null,
     form: true,
     categoryFilter: [],
+    dropDown: false,
 };
 
 export default initial;

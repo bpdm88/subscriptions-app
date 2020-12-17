@@ -61,6 +61,13 @@ const clrCatFilter = ( state ) => {
     }
 }
 
+const toggleDropDown = ( state ) => {
+    return {
+        ...state,
+        dropDown: !state.dropDown,
+    }
+}
+
 // Reducer
 const reducer = (state, action) => {
     switch (action.type) {
@@ -78,6 +85,8 @@ const reducer = (state, action) => {
             return addCatFilter(state, action);
         case "CLEAR_CAT_FILTER":
             return clrCatFilter(state);
+        case "TOGGLE_DROP_DOWN":
+            return toggleDropDown(state);
         default:
             return state;
     }
