@@ -9,18 +9,20 @@ class DropDown extends Component {
 
     handleClick(event) {
         event.preventDefault();
-        console.log(event.currentTarget.innerText);
-        console.log(this.props.categories);
+        
+        this.props.categoryClick(event.currentTarget.innerText);
     }
 
     render() {
+        let { categories } = this.props;
         return(
             <div class="dropdown">
                 <button class="dropbtn">Catagories</button>
                 <div class="dropdown-content">
-                    <button onClick={ this.handleClick }>Link 1</button>
-                    <button onClick={ this.handleClick }>Link 2</button>
-                    <button onClick={ this.handleClick }>Link 3</button>
+                    <button onClick={ this.handleClick }>Clear</button>
+                    { categories ? this.props.categories.map(category => (
+                        <button key={ category } onClick={ this.handleClick }>{ category }</button>
+                    )) : "Loading...."}
                 </div>
             </div>
         );
