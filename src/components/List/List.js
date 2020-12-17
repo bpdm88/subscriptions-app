@@ -2,15 +2,19 @@ import { Component } from "react";
 import TrafficLight from "./TrafficLight/TrafficLight";
 import Subscription from "../Subscription";
 import { paymentDayToDateObj } from "../../data/utilities/time";
-import Form from "../Form/Form";
+import Form from "../Form";
 
 class List extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.handleClick = this.handleClick.bind(this);
         this.whatColour = this.whatColour.bind(this);
+<<<<<<< HEAD
+        this.formClick = this.formClick.bind(this);
+=======
         this.catListInFilterList = this.catListInFilterList.bind(this);
+>>>>>>> main
     }
 
     componentDidMount() {
@@ -19,6 +23,10 @@ class List extends Component {
 
     handleClick(event) {
         this.props.setSelected(event.currentTarget.dataset.id);
+    }
+
+    formClick() {
+        this.props.displayForm();
     }
 
     whatColour(paymentDay) {
@@ -84,7 +92,10 @@ class List extends Component {
                     </li>
                 ))}
                 <li className="list-item">
-                    Add Subscription<button class="add">+</button>
+                    Add Subscription
+                    <button class="add" onClick={this.formClick}>
+                        +
+                    </button>
                     <Form />
                 </li>
             </ul>

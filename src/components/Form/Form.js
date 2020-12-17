@@ -8,10 +8,10 @@ class Form extends React.Component {
         this.state = {
             name: "",
             cost: 0,
-            startDate: "",
-            paymentDate: "",
+            startDate: null,
+            paymentDate: 0,
             notice: 0,
-            categories: "",
+            categories: [],
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,9 +24,27 @@ class Form extends React.Component {
     }
 
     handleSubmit(event) {
+        let {
+            name,
+            cost,
+            startDate,
+            paymentDate,
+            notice,
+            categories,
+        } = this.state;
+
         event.preventDefault();
 
         this.props.handleAddSubscription({ ...this.state });
+
+        this.setState({
+            name: "",
+            cost: null,
+            startDate: "",
+            paymentDate: null,
+            notice: null,
+            categories: [],
+        });
     }
 
     handleChangeName(event) {
@@ -73,7 +91,9 @@ class Form extends React.Component {
             categories,
         } = this.state;
 
-        return !this.props.form ? null : (
+        let { form } = this.props;
+
+        return !form ? null : (
             <form onSubmit={this.handleSubmit}>
                 <FormField
                     label="Name"

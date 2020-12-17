@@ -17,11 +17,16 @@ export const storeSubscription = (data) => ({
     data: data,
 });
 
-export const deleteSubscription = ( id ) => ({
+export const deleteSubscription = (id) => ({
     type: "DELETE",
     id: id,
 });
 
+<<<<<<< HEAD
+export const setForm = () => ({
+    type: "SET_FORM",
+});
+=======
 export const categoryFilter = (category) => {
     if( category === "Clear" ) {
         return {
@@ -35,3 +40,4 @@ export const categoryFilter = (category) => {
     }
 }
 
+>>>>>>> main
