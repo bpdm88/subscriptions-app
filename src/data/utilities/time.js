@@ -35,6 +35,14 @@ const dateAppend = (int) => {
             return "nd";
         case 3:
             return "rd";
+        case 21:
+            return "st";
+        case 22:
+            return "nd";
+        case 23:
+            return "rd";
+        case 31:
+            return "st";
         default:
             return "th";
     }
