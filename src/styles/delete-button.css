@@ -1,4 +1,4 @@
-.delete {
+/* .delete {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -15,17 +15,16 @@
                 transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+} */
+
+.delete{
+    background-color: #2B303D;
+    color: #f2f2f2;
+    border: none;
 }
 
-.delete:hover,
-.delete:focus {
-    background: #0053ba;
-}
-
-.delete:focus {
-    color: black;
-}
-
-.delete:active {
-    transform: scale(1.2);
+.delete:hover {
+    background-color: #f2f2f2;
+    color: #2B303D;
+    cursor: pointer;
 }

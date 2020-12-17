@@ -4,7 +4,8 @@ export const convertToDays = (miliseconds) => {
     return daysInt;
 }
 
-export const dateStringToDateObj = (dateString) => {
+export const dateStringToDateObj = (dateInt) => {
+    let dateString = dateInt.toString();
     let year = +dateString.substring(0, 4);
     let month = +dateString.substring(4, 6);
     let day = +dateString.substring(6, 8);

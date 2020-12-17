@@ -2,7 +2,7 @@ const initial = {
     subscriptions: [],
     loaded: false,
     selected: null,
-    form: false,
+    form: true,
 };
 
 export default initial;
