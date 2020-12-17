@@ -21,3 +21,17 @@ export const deleteSubscription = ( id ) => ({
     type: "DELETE",
     id: id,
 });
+
+export const categoryFilter = (category) => {
+    if( category === "Clear" ) {
+        return {
+            type: "CLEAR_CAT_FILTER",
+        }
+    } else {
+        return {
+            type: "ADD_CAT_FILTER",
+            category: category,
+        }
+    }
+}
+
