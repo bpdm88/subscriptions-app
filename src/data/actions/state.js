@@ -25,6 +25,7 @@ export const deleteSubscription = (id) => ({
 export const setForm = () => ({
     type: "SET_FORM",
 });
+
 export const categoryFilter = (category) => {
     if (category === "Clear") {
         return {
@@ -37,3 +38,9 @@ export const categoryFilter = (category) => {
         };
     }
 };
+
+export const dropDownState = () => {
+    return {
+        type: "TOGGLE_DROP_DOWN",
+    }
+}
