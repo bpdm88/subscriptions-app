@@ -17,7 +17,7 @@ class Button extends Component {
 
     render() {
         return(
-            <button onClick={ this.handleDelete } className="delete">x</button>
+            <button onClick={ this.handleDelete } className="delete">Delete Subscription</button>
         );
     }
 }

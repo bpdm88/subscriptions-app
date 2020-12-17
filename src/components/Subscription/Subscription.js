@@ -7,13 +7,11 @@ const Subscription = ({ selected, listID }) => {
     return (
         !display ? null :
         <>
-            <p>Monthly Cost £{selected.cost}</p>
-            <p>Next payment date ___</p>
-            <p>Spent so far £{amountPaid(selected.start, +selected.cost)}</p>
+            <p>Monthly Cost: £{selected.cost}</p>
+            <p>Next Payment Date: ___</p>
+            <p>Spent so far: £{amountPaid(selected.start, +selected.cost)}</p>
             <hr/>
-            <p>
-                Cancel in { daysToCancel(selected.notice_period, selected.payment_date) } days
-            </p>
+            <p>Cancel in: { daysToCancel(selected.notice_period, selected.payment_date) } days</p>
             <Button className="delete" itemID={ listID }></Button>
         </>
     );
