@@ -10,7 +10,7 @@ class Form extends React.Component {
             cost: 0,
             startDate: null,
             paymentDate: null,
-            notice: 0,
+            notice: null,
             categories: [],
         };
 
