@@ -17,7 +17,11 @@ export const storeSubscription = (data) => ({
     data: data,
 });
 
-export const deleteSubscription = ( id ) => ({
+export const deleteSubscription = (id) => ({
     type: "DELETE",
     id: id,
+});
+
+export const setForm = () => ({
+    type: "SET_FORM",
 });

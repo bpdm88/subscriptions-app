@@ -91,7 +91,9 @@ class Form extends React.Component {
             categories,
         } = this.state;
 
-        return !this.props.form ? null : (
+        let { form } = this.props;
+
+        return !form ? null : (
             <form onSubmit={this.handleSubmit}>
                 <FormField
                     label="Name"

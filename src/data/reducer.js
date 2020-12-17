@@ -23,15 +23,22 @@ const saveSubscription = (state, { data }) => {
     };
 };
 
-const deleteFromState = ( state, { id } ) => {
+const deleteFromState = (state, { id }) => {
     let subscriptions = state.subscriptions;
 
-    let updated = subscriptions.filter( item => item.id !== id )
+    let updated = subscriptions.filter((item) => item.id !== id);
     return {
         ...state,
-        subscriptions: [ ...updated ],
-    }
-}
+        subscriptions: [...updated],
+    };
+};
+
+const toggleForm = (state) => {
+    return {
+        ...state,
+        form: !state.form,
+    };
+};
 
 // Reducer
 const reducer = (state, action) => {
@@ -40,6 +47,8 @@ const reducer = (state, action) => {
             return saveSubscriptions(state, action);
         case "SET_SELECTED":
             return setSelected(state, action);
+        case "SET_FORM":
+            return toggleForm(state);
         case "SAVE_SUBSCRIPTION":
             return saveSubscription(state, action);
         case "DELETE":
