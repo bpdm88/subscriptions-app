@@ -14,14 +14,15 @@ class DropDown extends Component {
     }
 
     render() {
+        let { categories } = this.props;
         return(
             <div class="dropdown">
                 <button class="dropbtn">Catagories</button>
                 <div class="dropdown-content">
                     <button onClick={ this.handleClick }>Clear</button>
-                    {this.props.categories.map(category => (
+                    { categories ? this.props.categories.map(category => (
                         <button key={ category } onClick={ this.handleClick }>{ category }</button>
-                    ))}
+                    )) : "Loading...."}
                 </div>
             </div>
         );
