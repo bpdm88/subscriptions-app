@@ -1,6 +1,6 @@
 import { deleteSubscription } from "./actions/state";
 import initialState from "./initial";
-import { paymentDayToDateObj } from "./utilities/time";
+import { paymentDayToDateObj, cancelDate } from "./utilities/time";
 
 // Reducer functions
 const saveSubscriptions = (state, { data }) => {
@@ -79,7 +79,7 @@ const toggleFilter = ( state ) => {
 const filterByCancel = ( state ) => {
     return {
         ...state,
-        subscriptions: state.subscriptions.sort(),
+        subscriptions: state.subscriptions.sort(( a, b ) => cancelDate( a.notice_period, paymentDayToDateObj(a.payment_date) ) - cancelDate( b.notice_period, paymentDayToDateObj(b.payment_date) )),
     }
 }
 
