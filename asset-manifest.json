@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/subscriptions-app/static/css/main.4ed20692.chunk.css",
+    "main.css": "/subscriptions-app/static/css/main.a7a49de8.chunk.css",
     "main.js": "/subscriptions-app/static/js/main.9d8d4e80.chunk.js",
     "main.js.map": "/subscriptions-app/static/js/main.9d8d4e80.chunk.js.map",
     "runtime-main.js": "/subscriptions-app/static/js/runtime-main.6f7fc106.js",
@@ -8,14 +8,14 @@
     "static/js/2.81f4f26c.chunk.js": "/subscriptions-app/static/js/2.81f4f26c.chunk.js",
     "static/js/2.81f4f26c.chunk.js.map": "/subscriptions-app/static/js/2.81f4f26c.chunk.js.map",
     "index.html": "/subscriptions-app/index.html",
-    "static/css/main.4ed20692.chunk.css.map": "/subscriptions-app/static/css/main.4ed20692.chunk.css.map",
+    "static/css/main.a7a49de8.chunk.css.map": "/subscriptions-app/static/css/main.a7a49de8.chunk.css.map",
     "static/js/2.81f4f26c.chunk.js.LICENSE.txt": "/subscriptions-app/static/js/2.81f4f26c.chunk.js.LICENSE.txt",
     "static/media/logo.5bbf18a7.svg": "/subscriptions-app/static/media/logo.5bbf18a7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6f7fc106.js",
     "static/js/2.81f4f26c.chunk.js",
-    "static/css/main.4ed20692.chunk.css",
+    "static/css/main.a7a49de8.chunk.css",
     "static/js/main.9d8d4e80.chunk.js"
   ]
 }
