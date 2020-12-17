@@ -3,6 +3,7 @@ const initial = {
     loaded: false,
     selected: null,
     form: true,
+    categoryFilter: [],
 };
 
 export default initial;

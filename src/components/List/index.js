@@ -4,9 +4,12 @@ import { connect } from "react-redux";
 import { selected, setForm } from "../../data/actions/state";
 import { getSubscriptions } from "../../data/actions/api";
 
+
+
 const mapStateToProps = (state) => {
     return {
         list: state.subscriptions,
+        categoryFilter: state.categoryFilter,
     };
 };
 

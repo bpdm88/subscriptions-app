@@ -10,7 +10,11 @@ class List extends Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.whatColour = this.whatColour.bind(this);
+<<<<<<< HEAD
         this.formClick = this.formClick.bind(this);
+=======
+        this.catListInFilterList = this.catListInFilterList.bind(this);
+>>>>>>> main
     }
 
     componentDidMount() {
@@ -43,19 +47,41 @@ class List extends Component {
         } else return 1;
     }
 
+    catListInFilterList = ( catList, filterList ) => {
+        let bool = catList.reduce(( bool, category ) => {
+            if( filterList.includes(category) ) {
+                return true;
+            } else {
+                return bool;
+            }
+        }, false );
+        return bool;
+    }
+
     render() {
-        const { list } = this.props;
+        const { list, categoryFilter } = this.props;
+        let filteredList = [];
+
+        if(categoryFilter.length === 0){
+            filteredList = list;
+        } else {
+            filteredList = list.filter( subscr => this.catListInFilterList( subscr.categories, categoryFilter));
+        }
 
         return (
-            <ul>
-                {list.map((item) => (
+            <ul className="sub-card">
+                {filteredList.map((item) => (
                     <li
                         key={item.id}
-                        onClick={this.handleClick}
+                        // onClick={this.handleClick}
                         data-id={item.id}
                         className="list-item"
                     >
-                        <div className="list-item_header">
+                        <div 
+                            onClick={this.handleClick}
+                            data-id={item.id} 
+                            className="list-item_header"
+                        >
                             <p>{item.subscription_name}</p>
 
                             <TrafficLight

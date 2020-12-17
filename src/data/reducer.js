@@ -10,9 +10,12 @@ const saveSubscriptions = (state, { data }) => {
 };
 
 const setSelected = (state, { selected }) => {
+    console.log(typeof selected);
+    console.log(selected === state.selected);
     return {
         ...state,
-        selected: +selected,
+        // selected: +selected,        
+        selected: +selected === state.selected ? 0 : +selected,
     };
 };
 
@@ -40,6 +43,26 @@ const toggleForm = (state) => {
     };
 };
 
+const addCatFilter = ( state, { category } ) => {
+    if(state.categoryFilter.includes(category)) {
+        return {
+            ...state,
+        }
+    } else {
+        return {
+            ...state,
+            categoryFilter: [...state.categoryFilter, category],
+        }
+    }
+}
+
+const clrCatFilter = ( state ) => {
+    return {
+        ...state,
+        categoryFilter: [],
+    }
+}
+
 // Reducer
 const reducer = (state, action) => {
     switch (action.type) {
@@ -53,6 +76,10 @@ const reducer = (state, action) => {
             return saveSubscription(state, action);
         case "DELETE":
             return deleteFromState(state, action);
+        case "ADD_CAT_FILTER":
+            return addCatFilter(state, action);
+        case "CLEAR_CAT_FILTER":
+            return clrCatFilter(state);
         default:
             return state;
     }
