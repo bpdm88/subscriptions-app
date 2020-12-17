@@ -66,6 +66,7 @@ const toggleDropDown = ( state ) => {
     return {
         ...state,
         dropDown: !state.dropDown,
+        filterContent: false,
     }
 }
 
@@ -73,6 +74,7 @@ const toggleFilter = ( state ) => {
     return {
         ...state,
         filterContent: !state.filterContent,
+
     }
 }
 
