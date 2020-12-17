@@ -46,11 +46,15 @@ class List extends Component {
                 {list.map((item) => (
                     <li
                         key={item.id}
-                        onClick={this.handleClick}
+                        // onClick={this.handleClick}
                         data-id={item.id}
                         className="list-item"
                     >
-                        <div className="list-item_header">
+                        <div 
+                            onClick={this.handleClick}
+                            data-id={item.id} 
+                            className="list-item_header"
+                        >
                             <p>{item.subscription_name}</p>
 
                             <TrafficLight
