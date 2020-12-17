@@ -5,6 +5,7 @@ const initial = {
     form: true,
     categoryFilter: [],
     dropDown: false,
+    filterContent: true,
 };
 
 export default initial;
