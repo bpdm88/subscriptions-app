@@ -9,8 +9,8 @@ class Form extends React.Component {
             name: "",
             cost: 0,
             startDate: null,
-            paymentDate: null,
-            notice: null,
+            paymentDate: 0,
+            notice: 0,
             categories: [],
         };
 
@@ -39,10 +39,10 @@ class Form extends React.Component {
 
         this.setState({
             name: "",
-            cost: 0,
+            cost: null,
             startDate: "",
-            paymentDate: 0,
-            notice: 0,
+            paymentDate: null,
+            notice: null,
             categories: [],
         });
     }
