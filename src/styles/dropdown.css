@@ -40,3 +40,8 @@
 .dropdown-content button:hover {background-color: #ddd; color: #2B303D}
   
 .dropdown:hover .dropbtn {background-color: #1d87f2; color: #f2f2f2}
+
+#selectedCat {
+    background-color: #ddd;
+    color: #2B303D;
+}

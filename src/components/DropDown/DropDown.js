@@ -29,7 +29,7 @@ class DropDown extends Component {
                     <div class="dropdown-content">
                         <button onClick={ this.handleClick }>Clear</button>
                         { categories ? this.props.categories.map(category => (
-                            <button key={ category } onClick={ this.handleClick }>{ category }</button>
+                            <button id={selectedCategories.includes( category ) ? "selectedCat" : "" } key={ category } onClick={ this.handleClick }>{ category }</button>
                         )) : "Loading...."}
                     </div>
                 }
