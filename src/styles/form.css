@@ -2,14 +2,15 @@ form {
     background-color: #2b303d;
     color: #F2F2F2;
     border-radius: 15px;
-    width: 20rem;
-    margin: auto;
     padding: 1.5rem;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+}
+.add-sub-text{
+    margin: auto;
 }
 
 form label {
@@ -38,7 +39,6 @@ button {
     background-color: #2b303d;
     color: #F2F2F2;
     border-color: #F2F2F2;
-    
     border-style: solid;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
