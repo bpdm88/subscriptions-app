@@ -8,10 +8,10 @@ class Form extends React.Component {
         this.state = {
             name: "",
             cost: 0,
-            startDate: "",
-            paymentDate: "",
+            startDate: null,
+            paymentDate: null,
             notice: 0,
-            categories: "",
+            categories: [],
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,6 +27,8 @@ class Form extends React.Component {
         event.preventDefault();
 
         this.props.handleAddSubscription({ ...this.state });
+
+        // this.setState
     }
 
     handleChangeName(event) {
