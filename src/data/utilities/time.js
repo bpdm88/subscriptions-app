@@ -18,12 +18,38 @@ export const paymentDayToDateObj= (int) => {
     let today = current.getDate();
 
     if ( int > today ) {
-        return current.setDate(int);
+        current.setDate(int)
+        return current;
     } else {
         current.setDate(int)
         current.setMonth(current.getMonth() + 1);
         return current;
     }
+}
+
+const dateAppend = (int) => {
+    switch (int){
+        case 1:
+            return "st";
+        case 2:
+            return "nd";
+        case 3:
+            return "rd";
+        default:
+            return "th";
+    }
+}
+
+export const paymentDateToString = (int) => {
+    let monthsArray = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    let paymentDate = paymentDayToDateObj(int);
+    console.log(paymentDate);
+    let date = paymentDate.getDate();
+    let month = monthsArray[paymentDate.getMonth()];
+    
+
+    return `${date}${dateAppend(date)} ${month}`;
+    
 }
 
 export const cancelDate = ( noticePeriod, paymentDate ) => {

@@ -10,8 +10,6 @@ const saveSubscriptions = (state, { data }) => {
 };
 
 const setSelected = (state, { selected }) => {
-    console.log(typeof selected);
-    console.log(selected === state.selected);
     return {
         ...state,
         // selected: +selected,        
