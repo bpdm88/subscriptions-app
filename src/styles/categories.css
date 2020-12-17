@@ -7,9 +7,8 @@ ul.categories-list {
 
 li.category {
     list-style: none;
-    background-color: #e5e5e5;
-    color: #2b303d;
+    color: #CAC3C3;
+    font-size: 0.8rem;
     padding: 0.3rem;
-    margin: 0.3rem;
-    border-radius: 0.6rem;    
+    margin: 0.3rem;    
 }

@@ -1,7 +1,3 @@
-// import { daysToCancel } from "../../data/utilities/time";
-// import { amountPaid } from "../../data/utilities/finances";
-// import Button from "../Button";
-
 const Categories = ({ selected }) => {
     return (
             <ul className="categories-list"> 
