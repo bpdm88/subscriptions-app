@@ -10,11 +10,8 @@ class List extends Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.whatColour = this.whatColour.bind(this);
-<<<<<<< HEAD
         this.formClick = this.formClick.bind(this);
-=======
         this.catListInFilterList = this.catListInFilterList.bind(this);
->>>>>>> main
     }
 
     componentDidMount() {
@@ -47,25 +44,27 @@ class List extends Component {
         } else return 1;
     }
 
-    catListInFilterList = ( catList, filterList ) => {
-        let bool = catList.reduce(( bool, category ) => {
-            if( filterList.includes(category) ) {
+    catListInFilterList = (catList, filterList) => {
+        let bool = catList.reduce((bool, category) => {
+            if (filterList.includes(category)) {
                 return true;
             } else {
                 return bool;
             }
-        }, false );
+        }, false);
         return bool;
-    }
+    };
 
     render() {
         const { list, categoryFilter } = this.props;
         let filteredList = [];
 
-        if(categoryFilter.length === 0){
+        if (categoryFilter.length === 0) {
             filteredList = list;
         } else {
-            filteredList = list.filter( subscr => this.catListInFilterList( subscr.categories, categoryFilter));
+            filteredList = list.filter((subscr) =>
+                this.catListInFilterList(subscr.categories, categoryFilter)
+            );
         }
 
         return (
@@ -77,9 +76,9 @@ class List extends Component {
                         data-id={item.id}
                         className="list-item"
                     >
-                        <div 
+                        <div
                             onClick={this.handleClick}
-                            data-id={item.id} 
+                            data-id={item.id}
                             className="list-item_header"
                         >
                             <p>{item.subscription_name}</p>

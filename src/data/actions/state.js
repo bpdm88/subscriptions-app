@@ -22,22 +22,18 @@ export const deleteSubscription = (id) => ({
     id: id,
 });
 
-<<<<<<< HEAD
 export const setForm = () => ({
     type: "SET_FORM",
 });
-=======
 export const categoryFilter = (category) => {
-    if( category === "Clear" ) {
+    if (category === "Clear") {
         return {
             type: "CLEAR_CAT_FILTER",
-        }
+        };
     } else {
         return {
             type: "ADD_CAT_FILTER",
             category: category,
-        }
+        };
     }
-}
-
->>>>>>> main
+};
