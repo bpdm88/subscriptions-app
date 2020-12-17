@@ -34,6 +34,8 @@ export const postSubscription = (data) => {
 
 export const apiDelete = (id) => {
     return (dispatch) => {
-        dispatch(deleteSubscription(id));
+        axios.delete(`/${id}`).then(() => {
+            dispatch(deleteSubscription(id));
+        });
     };
 };
