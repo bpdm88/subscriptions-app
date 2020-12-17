@@ -1,4 +1,4 @@
-.sub-card{
+.sub-card {
     padding-left: 0;
 }
 
@@ -9,14 +9,13 @@
 }
 
 .list-item {
-    background-color: #2B303D;
-    color: #F2F2F2;
-    opacity: 95%;
+    background-color: #2b303d;
+    color: #f2f2f2;
     border-radius: 30px;
     width: 20rem;
     margin-bottom: 2rem;
     padding: 0.5rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
