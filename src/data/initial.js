@@ -2,7 +2,7 @@ const initial = {
     subscriptions: [],
     loaded: false,
     selected: null,
-    form: true,
+    form: false,
     categoryFilter: [],
     dropDown: false,
     filterContent: false,
