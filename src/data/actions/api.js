@@ -24,7 +24,7 @@ export const postSubscription = (data) => {
                 start: data.startDate.replace(/-/g, ""),
                 payment_date: data.paymentDate,
                 notice_period: data.notice,
-                categories: data.categories.split(", "),
+                categories: typeof data.categories === "string" ? data.categories.split(", ") : [],
             })
             .then(({ data }) => {
                 dispatch(storeSubscription(data.data));
