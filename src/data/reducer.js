@@ -1,5 +1,6 @@
 import { deleteSubscription } from "./actions/state";
 import initialState from "./initial";
+import { paymentDayToDateObj, cancelDate } from "./utilities/time";
 
 // Reducer functions
 const saveSubscriptions = (state, { data }) => {
@@ -65,6 +66,39 @@ const toggleDropDown = ( state ) => {
     return {
         ...state,
         dropDown: !state.dropDown,
+        filterContent: false,
+    }
+}
+
+const toggleFilter = ( state ) => {
+    return {
+        ...state,
+        filterContent: !state.filterContent,
+
+    }
+}
+
+const filterByCancel = ( state ) => {
+
+    let sorted = state.subscriptions.sort(( a, b ) => cancelDate( a.notice_period, paymentDayToDateObj(a.payment_date) ) - cancelDate( b.notice_period, paymentDayToDateObj(b.payment_date) ));
+
+    let sortedCopy = [ ...sorted ];
+
+    return {
+        ...state,
+        subscriptions: sortedCopy,
+    }
+}
+
+const filterByPayment = ( state ) => {
+
+    let sorted = state.subscriptions.sort(( a, b ) => paymentDayToDateObj(a.payment_date) - paymentDayToDateObj(b.payment_date));
+
+    let sortedCopy = [ ...sorted ]
+
+    return {
+        ...state,
+        subscriptions: sortedCopy,
     }
 }
 
@@ -87,6 +121,12 @@ const reducer = (state, action) => {
             return clrCatFilter(state);
         case "TOGGLE_DROP_DOWN":
             return toggleDropDown(state);
+        case "TOGGLE_FILTER":
+            return toggleFilter(state);
+        case "FILTER_BY_PAYMENT":
+            return filterByPayment(state);
+        case "FILTER_BY_CANCEL":
+            return filterByCancel(state);
         default:
             return state;
     }
