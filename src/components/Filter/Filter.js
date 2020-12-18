@@ -36,7 +36,7 @@ class Filter extends Component {
                 { !filterContent ? null :
                     <div className="dropdown-content sort-background">
                         <button className="adjustment" onClick={ this.handleClickPayment }>Payment day</button>
-                        <button onClick={ this.handleClickCancel }>Cancel day</button>
+                        <button className="adjustment" onClick={ this.handleClickCancel }>Cancel day</button>
                     </div>
                 }
             </div>
