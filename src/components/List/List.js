@@ -91,10 +91,9 @@ class List extends Component {
                     </li>
                 ))}
                 <li className="list-item">
-                    Add Subscription
-                    <button class="add" onClick={this.formClick}>
-                        { form ? "-" : "+" }
-                    </button>
+
+                    <p className="add-sub-text" onClick={this.formClick}>Add Subscription</p>
+
                     <Form />
                 </li>
             </ul>

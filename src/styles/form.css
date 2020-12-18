@@ -10,7 +10,9 @@ form {
     box-sizing: border-box;
 }
 .add-sub-text{
+    font-size: 1.5rem;
     margin: auto;
+    cursor: pointer;
 }
 
 form label {
