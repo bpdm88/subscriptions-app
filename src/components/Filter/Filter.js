@@ -32,7 +32,7 @@ class Filter extends Component {
         return(
             dropDown ? null :
             <div class="dropdown">
-                <button class="dropbtn" onClick={ this.handleDropDown }>Filter</button>
+                <button class="dropbtn" onClick={ this.handleDropDown }>Sort</button>
                 { !filterContent ? null :
                     <div class="dropdown-content">
                         <button onClick={ this.handleClickPayment }>Payment day</button>
