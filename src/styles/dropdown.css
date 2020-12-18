@@ -29,6 +29,15 @@
     z-index: 1;
 }
 
+.sort-background {
+    top: -67px;
+}
+
+.adjustment {
+    position: relative;
+    top: 67px;
+}
+
 .dropdown-content button {
     margin: 0.4rem auto;
     color: #f2f2f2;

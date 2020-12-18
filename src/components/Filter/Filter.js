@@ -34,9 +34,9 @@ class Filter extends Component {
             <div class="dropdown">
                 <button class="dropbtn" onClick={ this.handleDropDown }>Sort</button>
                 { !filterContent ? null :
-                    <div class="dropdown-content">
-                        <button onClick={ this.handleClickPayment }>Payment day</button>
-                        <button onClick={ this.handleClickCancel }>Cancel day</button>
+                    <div className="dropdown-content sort-background">
+                        <button className="adjustment" onClick={ this.handleClickPayment }>Payment day</button>
+                        <button className="adjustment" onClick={ this.handleClickCancel }>Cancel day</button>
                     </div>
                 }
             </div>
