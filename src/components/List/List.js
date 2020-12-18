@@ -56,7 +56,7 @@ class List extends Component {
     };
 
     render() {
-        const { list, categoryFilter } = this.props;
+        const { list, categoryFilter, form } = this.props;
         let filteredList = [];
 
         if (categoryFilter.length === 0) {
@@ -93,7 +93,7 @@ class List extends Component {
                 <li className="list-item">
                     Add Subscription
                     <button class="add" onClick={this.formClick}>
-                        +
+                        { form ? "-" : "+" }
                     </button>
                     <Form />
                 </li>
