@@ -79,16 +79,26 @@ const toggleFilter = ( state ) => {
 }
 
 const filterByCancel = ( state ) => {
+
+    let sorted = state.subscriptions.sort(( a, b ) => cancelDate( a.notice_period, paymentDayToDateObj(a.payment_date) ) - cancelDate( b.notice_period, paymentDayToDateObj(b.payment_date) ));
+
+    let sortedCopy = [ ...sorted ];
+
     return {
         ...state,
-        subscriptions: state.subscriptions.sort(( a, b ) => cancelDate( a.notice_period, paymentDayToDateObj(a.payment_date) ) - cancelDate( b.notice_period, paymentDayToDateObj(b.payment_date) )),
+        subscriptions: sortedCopy,
     }
 }
 
 const filterByPayment = ( state ) => {
+
+    let sorted = state.subscriptions.sort(( a, b ) => paymentDayToDateObj(a.payment_date) - paymentDayToDateObj(b.payment_date));
+
+    let sortedCopy = [ ...sorted ]
+
     return {
         ...state,
-        subscriptions: state.subscriptions.sort(( a, b ) => paymentDayToDateObj(a.payment_date) - paymentDayToDateObj(b.payment_date)),
+        subscriptions: sortedCopy,
     }
 }
 
