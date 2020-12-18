@@ -69,7 +69,10 @@ export const cancelDate = ( noticePeriod, paymentDate ) => {
     if ( cancelDateObj - now >= 0 ){
         return cancelDateObj;
     } else {
-        cancelDateObj.setMonth(cancelDateObj.getMonth() + 1);
+
+        let overShootMonths = Math.ceil(( convertToDays(now - cancelDateObj) / 365 ) * 12);
+
+        cancelDateObj.setMonth(cancelDateObj.getMonth() + overShootMonths);
         return cancelDateObj;
     }
 }
