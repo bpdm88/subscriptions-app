@@ -1,7 +1,7 @@
 import DropDown from "./DropDown";
 
 import { connect } from "react-redux";
-import { categoryFilter } from "../../data/actions/state";
+import { categoryFilter, dropDownState } from "../../data/actions/state";
 
 const mapStateToProps = (state) => {
     //get all subscriptions
@@ -16,12 +16,15 @@ const mapStateToProps = (state) => {
 
     return {
         categories: categories,
+        dropDownContent: state.dropDown,
+        selectedCategories: state.categoryFilter,
     };
 };
 
 const mapDispatchToProps = ( dispatch ) => {
     return {
         categoryClick: (category) => dispatch(categoryFilter(category)),
+        dropDownClick: (category) => dispatch(dropDownState()),
     }
 }
 

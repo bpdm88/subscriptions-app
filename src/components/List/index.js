@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
     return {
         list: state.subscriptions,
         categoryFilter: state.categoryFilter,
+        form: state.form,
     };
 };
 

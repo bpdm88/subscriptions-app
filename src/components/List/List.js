@@ -56,7 +56,7 @@ class List extends Component {
     };
 
     render() {
-        const { list, categoryFilter } = this.props;
+        const { list, categoryFilter, form } = this.props;
         let filteredList = [];
 
         if (categoryFilter.length === 0) {
@@ -91,7 +91,9 @@ class List extends Component {
                     </li>
                 ))}
                 <li className="list-item">
+
                     <p className="add-sub-text" onClick={this.formClick}>Add Subscription</p>
+
                     <Form />
                 </li>
             </ul>
